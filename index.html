@@ -1,25 +1,62 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title> - 1902-3</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - 1902-3</title>
 <style>
     span {
-  color:#F00FFF;
+  color:#FFFFFF;
 }
 
 div{
-  background:#CCCCCC
-}
+  background:#CCCCCC;
+
   </style>
 </head>
 <body translate="no">
+<div>
+<button id="playMe"><u><b>Play Me</b></u></button>
+<button id="playFast"><u><b>Play Fast</b></u></button>
+<button id="playFromMiddle"><u><b>Play From Middle</b></u></button>
+<button id="stopPlay"><u><b>Pause Video</b></u></button>
+</div>
+<video width="400" id="myVideo" controls>
+<source src="https://github.com/gustrombold/1901-3/raw/master/video/WIN_20190903_10_50_42_Pro.mp4">
+Your browser does not support HTML5 video.
+</video>
 <div>Hello <span>World</span></div>
 <script id="rendered-js">
       console.clear();
-var x = 5;
-x = x + 6;
-console.log("hello world");
+
+vid = document.getElementById("myVideo");
+document.getElementById("playMe").addEventListener("click",playMe);
+document.getElementById("playFast").addEventListener("click",playFast);
+document.getElementById("playFromMiddle").addEventListener("click",playFromMiddle);
+document.getElementById("stopPlay").addEventListener("click",stopPlay);
+function playMe(e){
+  console.log("Button Clicked");
+  vid.playbackRate = 1;
+  vid.play();
+}
+
+function playFast(e){
+  vid.playbackRate = 2;
+  vid.play();
+}
+
+function playFromMiddle(e){
+  vid.currentTime = 5;
+  vid.play();
+}
+function stopPlay(e){
+  console.log("Button Clicked");
+  vid.playbackRate = 5;
+  vid.pause();
+}
     </script>
 </body>
 </html>
